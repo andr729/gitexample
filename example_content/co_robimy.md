@@ -39,6 +39,11 @@ Dodaje zmiany do repozytorium zdalnego.
 
 ## Gałęzie - branch, checkout, merge
 * `git checkout basic_branch`
+* `git branch basic_branch_fix`
+* `git checkout basic_branch_fix`  
+Aby 
+* Odpowiednia modyfikacja
+* *
 
 ## Gałęzie - merge conflict
 * `git checkout merge_conflict`
@@ -52,6 +57,6 @@ Dodaje zmiany do repozytorium zdalnego.
 
 ### rebase
 
-### disect
+### bisect
 
 ### submodule
