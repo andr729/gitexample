@@ -68,5 +68,6 @@ kończymy `merge` commit-ująć zmiany.
 ### rebase
 
 ### bisect
+* todo
 
 ### submodule
