@@ -52,6 +52,10 @@ Wprowadza zmiany z `addition_fix` do `master`.
 * `git checkout merge_conflict`
 * Spróbujmy teraz wprowadzić zmiany z `merge_conflict_other`  
 `git merge merge_conflict_other`
+* `git status`
+* Jak wyglądają pliki?  
+`git merge` pozostawi zmodyfikowane pliki - my możemy zrobić z nimi co chcemy, a 
+kończymy `merge` commit-ująć zmiany.
 
 
 
