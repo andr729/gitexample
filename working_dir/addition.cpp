@@ -2,5 +2,9 @@
 #include "addition.hpp"
 
 int add(int a, int b) {
-    return a + b;
+    int out = a;
+    while (b --> 0) {
+        out++;
+    }
+    return out;
 }
