@@ -39,14 +39,20 @@ Dodaje zmiany do repozytorium zdalnego.
 
 ## Gałęzie - branch, checkout, merge
 * `git checkout basic_branch`
-* `git branch basic_branch_fix`
-* `git checkout basic_branch_fix`  
-Aby 
+* `git branch addition_fix`
+* `git checkout addition_fix`  
+Aby stworzyć gałąź i od razu się na nią przenieść, można użyć
+`git checkout -b new_brach`  
 * Odpowiednia modyfikacja
-* *
+* `git checkout master`
+* `git merge addition_fix`  
+Wprowadza zmiany z `addition_fix` do `master`.
 
 ## Gałęzie - merge conflict
 * `git checkout merge_conflict`
+* Spróbujmy teraz wprowadzić zmiany z `merge_conflict_other`  
+`git merge merge_conflict_other`
+
 
 
 ## Coś więcej
