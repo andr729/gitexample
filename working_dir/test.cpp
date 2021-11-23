@@ -21,6 +21,7 @@ void genericTest(FT func, OutT out, string name) {
 void test() {
     genericTest([](){return add(1, 1);}, 2, "Test 1");
     genericTest([](){return add(1, 2);}, 3, "Test 2");
+    genericTest([](){return add(63, 60);}, 123, "Test 2");
 }
 
 int main() {
