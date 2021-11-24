@@ -63,7 +63,11 @@ kończymy `merge` commit-ująć zmiany.
 
 ### reset
 
-### checkout, log, reflog
+### log, reflog
+
+### checkout
+* Pozwala przejść do dowolnego commit-a (gałęzie są jedynie wskaźnikami na commit-y).
+
 
 ### rebase
 * `git checkout rebase_A`
