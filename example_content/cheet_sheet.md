@@ -1,4 +1,9 @@
+### git clone
+* `git clone --depth 10 remote-url` - do dużych repo, klonuje commit-y jedynie do głębokości 10.
+
 ### git status
+* `-v` pokazuje diff-a dodanych plików.
+* `-vv` dodatkowo pokazuje diff-a jeszcze nie dodanych plików.
 
 ### git add
 
