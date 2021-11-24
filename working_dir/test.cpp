@@ -4,6 +4,7 @@
 
 using std::string;
 using std::cout;
+using std::cin;
 
 template<class FT, class OutT>
 void genericTest(FT func, OutT out, string name) {
@@ -29,6 +30,20 @@ void test() {
     genericTest([](){return add(-1, -2);}, -3, "Test 4");
 }
 
+void test_with_input() {
+    int a, b;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+    int out = add(a, b);
+    cout << "Output: " << out << " ";
+    if (out == a + b) {
+        cout << "OK\n";
+    }
+    else {
+        cout << "WRONG\n";
+    }
+}
+
 int main() {
-    test();
+    test_with_input();
 }
