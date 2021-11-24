@@ -68,6 +68,18 @@ kończymy `merge` commit-ująć zmiany.
 ### rebase
 
 ### bisect
-* todo
+* `git checkout bisect`
+* Idziemy do góry repo...
+* `git bisect start`  
+Rozpoczyna „sesję” bisect, czyli wyszukiwanie binarne pierwszego commit-a, który coś zmienił.
+* `git reflog` lub `git log`
+* `git bisect new/bad commit_id`  
+Przekazujemy git-owi informacje o ostatnim złym commit-cie, o którym wiemy.
+* `git bisect old/good commit_id`  
+Przekazujemy git-owi informacje pierwszym dobrym commit-cie, o którym wiemy.  
+Teraz git przeniesie nas na pewien commit, a my będziemy musieli stwierdzić czy dana zmiana/bug
+w nim występuje. Po tym wpisujemy odpowiednio:  
+`git bisect good/old` lub `git bisect bad/new`.
+* Na końcu git poinformuje nas o znalezionym commit-cie, oraz pozostawi tam HEAD.
 
 ### submodule
