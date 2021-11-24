@@ -62,6 +62,16 @@ kończymy `merge` commit-ująć zmiany.
 ## Coś więcej
 
 ### reset
+* `git checkout "reset_branch"`
+* `git log...`  
+Chcemy usunąć ostatni commit.
+* `git reset HEAD~1`  
+`HEAD~1`, czyli jeden wcześniej niż `HEAD`. [Więcej o tym tu.](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection)  
+Zauważmy, że usunięte zmiany pozostały w working tree. Aby się ich pozbyć, należy użyć flagi `--hard`.  
+* `git reset HEAD --hard`.  
+Pozostawia gałąź w tym samym miejscu, ale usuwa zmiany nie dodane do repozytorium.
+
+Reset jest szczególnie przydatny, gdu niechcący dodaliśmy commit na złą gałąź.
 
 ### checkout, log, reflog
 * Pozwala przejść do dowolnego commit-a (gałęzie są jedynie wskaźnikami na commit-y).
