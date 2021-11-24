@@ -66,6 +66,12 @@ kończymy `merge` commit-ująć zmiany.
 ### checkout, log, reflog
 
 ### rebase
+* `git checkout rebase_A`
+* Teraz zamienimy „podstawę” branch-a `rebase_A`, ma `rebase_B`.  
+W praktyce, ma to podobny efekty, co `merge`, ale zupełnie inaczej będzie wyglądać w repozytorium.  
+* Wizualizacja...  
+* Bardziej formalnie można myśleć tak: jeśli `p = lca(A, B)`, to commit-y od `p`, do `A`, zostaną
+dodane do `B` (bez modyfikacji pozycji `B`), a następnie `A` zostanie przesunięte na ostatni dodany commit. 
 
 ### bisect
 * `git checkout bisect`
