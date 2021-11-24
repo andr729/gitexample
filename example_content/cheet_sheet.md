@@ -21,8 +21,10 @@
 
 ### git merge
 * `git merge name` - merge-uje `name` do aktualnej gałęzi. (aktualna gałąź jest modyfikowana)
-* `git merge name1 name2` - merge-uje `name` do aktualnej gałęzi. (aktualna gałąź jest modyfikowana)
 * `--no-commit` - nie tworzy commit-a. Użytkownik może zweryfikować, czy merge był poprawny i samemu dodać commit.
+
+### git rebase
+* `git rebase name` - zmienia podstawę aktualnej gałęzi na `name`. (aktualna gałąź jest modyfikowana)
 
 ### git reflog
 
