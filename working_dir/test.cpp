@@ -23,6 +23,10 @@ void test() {
     genericTest([](){return sum(1, 2);}, 3, "Test 2");
     genericTest([](){return sum(10, 20);}, 30, "Test 2");
     genericTest([](){return sum(11, -22);}, -11, "Test 2");
+    genericTest([](){return add(1, 1);}, 2, "Test 1");
+    genericTest([](){return add(1, 2);}, 3, "Test 2");
+    genericTest([](){return add(2221, 211);}, 2432, "Test 3");
+    genericTest([](){return add(-1, -2);}, -3, "Test 4");
 }
 
 int main() {
