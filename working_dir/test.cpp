@@ -37,10 +37,10 @@ void test_with_input() {
     int out = add(a, b);
     cout << "Output: " << out << " ";
     if (out == a + b) {
-        cout << "OK\n";
+        cout << "\033[1;32mOK\033[0m\n";
     }
     else {
-        cout << "WRONG\n";
+        cout << "\033[1;31mWRONG\033[0m\n";
     }
 }
 
