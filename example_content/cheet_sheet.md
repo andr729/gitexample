@@ -1,6 +1,14 @@
+### git clone
+* `git clone --depth 10 remote-url` - do dużych repo, klonuje commit-y jedynie do głębokości 10.
+
 ### git status
+* `-v` pokazuje diff-a dodanych plików.
+* `-vv` dodatkowo pokazuje diff-a jeszcze nie dodanych plików.
 
 ### git add
+* `git add plik/ścieżka/fileglobs` - dodaje pliki.
+* `git add -A` - dodaje wszystkie pliki.
+* `--dry-run` - nie dodaje plików, ale wypisuje co by dodał. Przydatne, gdy np piszemy `git add ../../some_dir/*.py`.
 
 ### git rm
 
@@ -14,6 +22,16 @@
 ### git fetch
 
 ### git stash
+
+### git reset
+* `git reset HEAD~N` - cofa gałąź o N commit-ów. Nie modyfikuje working tree.
+* `git reset HEAD~N --hard` - cofa gałąź o N commit-ów. Working tree będzie zresetowane do cofniętej gałęzi.
+
+### git checkout
+* `git checkout branch_name/commit_hash`
+* `git checkout -b new_branch_name`
+* `git switch branch_name`
+* `git switch -c new_branch_name`
 
 ### git branch
 * `git branch name` - kopiuje aktualną gałąź.
@@ -30,7 +48,16 @@
 * `git rebase --abort` - przerywa rebase
 * `git rebase --interactive` - pozwala wybrać commit-y, które dodamy.
 
+### git log
+* `git log` - wypisuje commit-y poprzedzające aktualną gałąź. 
+* `git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short` - ładne i krótkie wypisywanie.
+* `git log --format=oneline` - jak wyżej, ale trochę gorsze.
+* `-n 10` ogranicza do 10 ostatnich zmian.
+* `--no-abbrev` - wypisuje pełne nazwy commit-ów.
+
 ### git reflog
+* `git reflog` - wypisuje zmiany w HEAD
+* Opcje takie same jak w `log`.
 
 ### git bisect
 * Najpierw `git bisect start`
