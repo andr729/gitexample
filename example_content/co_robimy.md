@@ -44,9 +44,9 @@ Dodaje zmiany do repozytorium zdalnego.
 Aby stworzyć gałąź i od razu się na nią przenieść, można użyć
 `git checkout -b new_brach`  
 * Odpowiednia modyfikacja
-* `git checkout master`
+* `git checkout basic_branch`
 * `git merge addition_fix`  
-Wprowadza zmiany z `addition_fix` do `master`.
+Wprowadza zmiany z `addition_fix` do `basic_branch`.
 
 ## Gałęzie - merge conflict
 * `git checkout merge_conflict`
