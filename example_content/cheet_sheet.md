@@ -25,6 +25,10 @@
 
 ### git rebase
 * `git rebase name` - zmienia podstawę aktualnej gałęzi na `name`. (aktualna gałąź jest modyfikowana)
+* `git rebase --continue` - kontynuuje rebase
+* `git rebase --skip` - pomija commit, który spowodował konflikt
+* `git rebase --abort` - przerywa rebase
+* `git rebase --interactive` - pozwala wybrać commit-y, które dodamy.
 
 ### git reflog
 

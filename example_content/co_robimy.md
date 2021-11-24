@@ -72,6 +72,11 @@ W praktyce, ma to podobny efekty, co `merge`, ale zupełnie inaczej będzie wygl
 * Wizualizacja...  
 * Bardziej formalnie można myśleć tak: jeśli `p = lca(A, B)`, to commit-y od `p`, do `A`, zostaną
 dodane do `B` (bez modyfikacji pozycji `B`), a następnie `A` zostanie przesunięte na ostatni dodany commit. 
+* `git rebase rebase_B`
+* Mamy konflikt...  
+Możemy zobaczyć go poprzez `git am --show-current-patch`, a rozwiązujemy go analogicznie jak merge conflict. Modyfikujemy pliki, zatwierdzamy, przez `add`, a następnie możemy kontynuować poprzez:
+`git rebase --continue`.  
+Dostępne jest także `--skip` oraz `--abort`.
 
 ### bisect
 * `git checkout bisect`
