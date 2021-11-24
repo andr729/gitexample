@@ -63,14 +63,19 @@ kończymy `merge` commit-ująć zmiany.
 
 ### reset
 
-### log, reflog
-
-### checkout
+### checkout, log, reflog
 * Pozwala przejść do dowolnego commit-a (gałęzie są jedynie wskaźnikami na commit-y).
 * `git checkout checkout_new_branch`
+* `git log`
+* `git log --format=online`
+* `git log --format=online -n 10`
 * `git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short -n 10`
-* `git checkout „added todo”`
-
+* `git checkout 6cd112b` („added todo”)
+* You are in 'detached HEAD' state....
+* modyfikacja 
+* `git add -A`
+* `git commit -m "todo done"`
+* `git switch -c fix_todo`
 
 ### rebase
 * `git checkout rebase_A`

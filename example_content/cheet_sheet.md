@@ -15,6 +15,12 @@
 
 ### git stash
 
+### git checkout
+* `git checkout branch_name/commit_hash`
+* `git checkout -b new_branch_name`
+* `git switch branch_name`
+* `git switch -c new_branch_name`
+
 ### git branch
 * `git branch name` - kopiuje aktualną gałąź.
 * `git branch` - lista gałęzi.
@@ -33,11 +39,13 @@
 ### git log
 * `git log` - wypisuje commit-y poprzedzające aktualną gałąź. 
 * `git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short` - ładne i krótkie wypisywanie.
+* `git log --format=oneline` - jak wyżej, ale trochę gorsze.
 * `-n 10` ogranicza do 10 ostatnich zmian.
+* `--no-abbrev` - wypisuje pełne nazwy commit-ów.
 
 ### git reflog
 * `git reflog` - wypisuje zmiany w HEAD
-* `-n 10` ogranicza do 10 ostatnich zmian.
+* Opcje takie same jak w `log`.
 
 ### git bisect
 * Najpierw `git bisect start`
