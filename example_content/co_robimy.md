@@ -44,9 +44,9 @@ Dodaje zmiany do repozytorium zdalnego.
 Aby stworzyć gałąź i od razu się na nią przenieść, można użyć
 `git checkout -b new_brach`  
 * Odpowiednia modyfikacja
-* `git checkout master`
+* `git checkout basic_branch`
 * `git merge addition_fix`  
-Wprowadza zmiany z `addition_fix` do `master`.
+Wprowadza zmiany z `addition_fix` do `basic_branch`.
 
 ## Gałęzie - merge conflict
 * `git checkout merge_conflict`
@@ -62,10 +62,62 @@ kończymy `merge` commit-ująć zmiany.
 ## Coś więcej
 
 ### reset
+* `git checkout "reset_branch"`
+* `git log...`  
+Chcemy usunąć ostatni commit.
+* `git reset HEAD~1`  
+`HEAD~1`, czyli jeden wcześniej niż `HEAD`. [Więcej o tym tu.](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection)  
+Zauważmy, że usunięte zmiany pozostały w working tree. Aby się ich pozbyć, należy użyć flagi `--hard`.  
+* `git reset HEAD --hard`.  
+Pozostawia gałąź w tym samym miejscu, ale usuwa zmiany nie dodane do repozytorium.
+
+Reset jest szczególnie przydatny, gdu niechcący dodaliśmy commit na złą gałąź.
 
 ### checkout, log, reflog
+* Pozwala przejść do dowolnego commit-a (gałęzie są jedynie wskaźnikami na commit-y).
+* `git checkout checkout_new_branch`
+* `git log`
+* `git log --format=online`
+* `git log --format=online -n 10`
+* `git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short -n 10`
+* `git checkout 6cd112b` („added todo”)
+* You are in 'detached HEAD' state....
+* modyfikacja 
+* `git add -A`
+* `git commit -m "todo done"`
+* `git switch -c fix_todo`
 
 ### rebase
+* `git checkout rebase_A`
+* Teraz zamienimy „podstawę” branch-a `rebase_A`, ma `rebase_B`.  
+W praktyce, ma to podobny efekty, co `merge`, ale zupełnie inaczej będzie wyglądać w repozytorium.  
+* Wizualizacja...  
+* Bardziej formalnie można myśleć tak: jeśli `p = lca(A, B)`, to commit-y od `p`, do `A`, zostaną
+dodane do `B` (bez modyfikacji pozycji `B`), a następnie `A` zostanie przesunięte na ostatni dodany commit. 
+* `git rebase rebase_B`
+* Mamy konflikt...  
+Możemy zobaczyć go poprzez `git am --show-current-patch`, a rozwiązujemy go analogicznie jak merge conflict. Modyfikujemy pliki, zatwierdzamy, przez `add`, a następnie możemy kontynuować poprzez:
+`git rebase --continue`.  
+Dostępne jest także `--skip` oraz `--abort`.
+
+### rebase - interactive, squash
+* `git checkout rebase_squash`
+* `git log...`  
+Występują 3 commit-y debug obok siebie. Wolelibyśmy zamienić je wraz z ostatnim commit-em w jeden.  
+Chcemy więc połączyć ostatnie 4 commit-y w jeden - użyjemy do tego rebase.
+* `git rebase --interactive a88215da`, a88215da czyli „Added feature: mul” (hash coomit-u tuż przed ostatnim łączonym commit-em).  
+Chcemy zmienić bazę, na commit, który występuje na ścieżce do korzenia.  
+Bez `--interactive` nie powinno to mieć efektu.
+* a co z `--interactive`
+Pojawi się edytor, w którym określamy co dokładnie git powinien zrobić z każdym commit-em.  
+Git napiszę nam także w komentarzu podpowiedz, jakie są opcje oraz co robią.  
+Uwaga: Starsze commit-y znajdują się na początku listy.  
+Ustawmy opcje na: `pick`, `squash`, ..., `squash`.
+* Zatwierdzamy  
+Git będzie chciał zrobić teraz commit, który będzie naszym połączonym commit-em. Jako, że nie zna jego opisu, ponownie wyświetli edytor, w którym tym razem wpisujemy opis commit-u.  
+Można wpisać np „Implemented and tested mul”
+* Zatwierdzamy ponownie
+* `git log...`
 
 ### bisect
 * `git checkout bisect`
