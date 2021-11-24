@@ -90,6 +90,10 @@ Możemy zobaczyć go poprzez `git am --show-current-patch`, a rozwiązujemy go a
 `git rebase --continue`.  
 Dostępne jest także `--skip` oraz `--abort`.
 
+* a co gdyby rebase_A było na ścieżce do korzenia...
+### squash commits
+* `git checkout rebase_squash`
+
 ### bisect
 * `git checkout bisect`
 * Idziemy do góry repo...
