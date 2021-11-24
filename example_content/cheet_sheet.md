@@ -30,7 +30,14 @@
 * `git rebase --abort` - przerywa rebase
 * `git rebase --interactive` - pozwala wybrać commit-y, które dodamy.
 
+### git log
+* `git log` - wypisuje commit-y poprzedzające aktualną gałąź. 
+* `git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short` - ładne i krótkie wypisywanie.
+* `-n 10` ogranicza do 10 ostatnich zmian.
+
 ### git reflog
+* `git reflog` - wypisuje zmiany w HEAD
+* `-n 10` ogranicza do 10 ostatnich zmian.
 
 ### git bisect
 * Najpierw `git bisect start`

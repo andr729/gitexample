@@ -67,6 +67,9 @@ kończymy `merge` commit-ująć zmiany.
 
 ### checkout
 * Pozwala przejść do dowolnego commit-a (gałęzie są jedynie wskaźnikami na commit-y).
+* `git checkout checkout_new_branch`
+* `git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short -n 10`
+* `git checkout „added todo”`
 
 
 ### rebase
