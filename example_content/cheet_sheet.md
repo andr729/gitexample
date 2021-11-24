@@ -6,6 +6,9 @@
 * `-vv` dodatkowo pokazuje diff-a jeszcze nie dodanych plików.
 
 ### git add
+* `git add plik/ścieżka/fileglobs` - dodaje pliki.
+* `git add -A` - dodaje wszystkie pliki.
+* `--dry-run` - nie dodaje plików, ale wypisuje co by dodał. Przydatne, gdy np piszemy `git add ../../some_dir/*.py`.
 
 ### git rm
 
@@ -19,6 +22,10 @@
 ### git fetch
 
 ### git stash
+
+### git reset
+* `git reset HEAD~N` - cofa gałąź o N commit-ów. Nie modyfikuje working tree.
+* `git reset HEAD~N --hard` - cofa gałąź o N commit-ów. Working tree będzie zresetowane do cofniętej gałęzi.
 
 ### git checkout
 * `git checkout branch_name/commit_hash`
