@@ -62,6 +62,16 @@ kończymy `merge` commit-ująć zmiany.
 ## Coś więcej
 
 ### reset
+* `git checkout "reset_branch"`
+* `git log...`  
+Chcemy usunąć ostatni commit.
+* `git reset HEAD~1`  
+`HEAD~1`, czyli jeden wcześniej niż `HEAD`. [Więcej o tym tu.](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection)  
+Zauważmy, że usunięte zmiany pozostały w working tree. Aby się ich pozbyć, należy użyć flagi `--hard`.  
+* `git reset HEAD --hard`.  
+Pozostawia gałąź w tym samym miejscu, ale usuwa zmiany nie dodane do repozytorium.
+
+Reset jest szczególnie przydatny, gdu niechcący dodaliśmy commit na złą gałąź.
 
 ### checkout, log, reflog
 * Pozwala przejść do dowolnego commit-a (gałęzie są jedynie wskaźnikami na commit-y).
@@ -90,9 +100,24 @@ Możemy zobaczyć go poprzez `git am --show-current-patch`, a rozwiązujemy go a
 `git rebase --continue`.  
 Dostępne jest także `--skip` oraz `--abort`.
 
-* a co gdyby rebase_A było na ścieżce do korzenia...
-### squash commits
+### rebase - interactive, squash
 * `git checkout rebase_squash`
+* `git log...`  
+Występują 3 commit-y debug obok siebie. Wolelibyśmy zamienić je wraz z ostatnim commit-em w jeden.  
+Chcemy więc połączyć ostatnie 4 commit-y w jeden - użyjemy do tego rebase.
+* `git rebase --interactive a88215da`, a88215da czyli „Added feature: mul” (hash coomit-u tuż przed ostatnim łączonym commit-em).  
+Chcemy zmienić bazę, na commit, który występuje na ścieżce do korzenia.  
+Bez `--interactive` nie powinno to mieć efektu.
+* a co z `--interactive`
+Pojawi się edytor, w którym określamy co dokładnie git powinien zrobić z każdym commit-em.  
+Git napiszę nam także w komentarzu podpowiedz, jakie są opcje oraz co robią.  
+Uwaga: Starsze commit-y znajdują się na początku listy.  
+Ustawmy opcje na: `pick`, `squash`, ..., `squash`.
+* Zatwierdzamy  
+Git będzie chciał zrobić teraz commit, który będzie naszym połączonym commit-em. Jako, że nie zna jego opisu, ponownie wyświetli edytor, w którym tym razem wpisujemy opis commit-u.  
+Można wpisać np „Implemented and tested mul”
+* Zatwierdzamy ponownie
+* `git log...`
 
 ### bisect
 * `git checkout bisect`
