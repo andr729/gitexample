@@ -2,5 +2,5 @@
 #include "addition.hpp"
 
 int add(int a, int b) {
-    return a + a;
+    return a + b;
 }
